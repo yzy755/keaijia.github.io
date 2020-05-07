@@ -5,21 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yzy755.github.io">
-  <title>jvm调优总结 -Xms -Xmx -Xmn -Xss | 易泽源的博客</title>
+  <link rel="dns-prefetch" href="https://yzy755.github.io/keaijia.github.io">
+  <title>jvm调优总结 -Xms -Xmx -Xmn -Xss | 可可布丁家园</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="堆大小设置JVM 中最大堆大小有三方面限制：相关操作系统的数据模型（32-bt还是64-bit）限制；系统的可用虚拟内存限制；系统的可用物理内存限制。32位系统下，一般限制在1.5G~2G；64为操作系统对内存无限制。我在Windows Server 2003 系统，3.5G物理内存，JDK5.0下测试，最大可设置为1478m。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jvm调优总结 -Xms -Xmx -Xmn -Xss">
-<meta property="og:url" content="http://yzy755.github.io/2017/03/24/jvm调优总结 -Xms -Xmx -Xmn -Xss/index.html">
-<meta property="og:site_name" content="易泽源的博客">
+<meta property="og:url" content="https://yzy755.github.io/keaijia.github.io/2017/03/24/jvm调优总结 -Xms -Xmx -Xmn -Xss/index.html">
+<meta property="og:site_name" content="可可布丁家园">
 <meta property="og:description" content="堆大小设置JVM 中最大堆大小有三方面限制：相关操作系统的数据模型（32-bt还是64-bit）限制；系统的可用虚拟内存限制；系统的可用物理内存限制。32位系统下，一般限制在1.5G~2G；64为操作系统对内存无限制。我在Windows Server 2003 系统，3.5G物理内存，JDK5.0下测试，最大可设置为1478m。">
-<meta property="og:updated_time" content="2017-03-24T10:09:32.023Z">
+<meta property="og:updated_time" content="2017-03-24T10:09:32.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jvm调优总结 -Xms -Xmx -Xmn -Xss">
 <meta name="twitter:description" content="堆大小设置JVM 中最大堆大小有三方面限制：相关操作系统的数据模型（32-bt还是64-bit）限制；系统的可用虚拟内存限制；系统的可用物理内存限制。32位系统下，一般限制在1.5G~2G；64为操作系统对内存无限制。我在Windows Server 2003 系统，3.5G物理内存，JDK5.0下测试，最大可设置为1478m。">
   
-    <link rel="alternative" href="/atom.xml" title="易泽源的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="可可布丁家园" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -46,13 +46,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2017/03/08/150908/34060/webwxgeticon.jpg" class="js-avatar">
+			<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161050/18203/P51112-211817-001.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">易泽源</a></h1>
+		  <h1 class="header-author"><a href="/">可可布丁</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">一天进步一点 程序员由入门到放弃</p>
+		<p class="header-subtitle">M2M</p>
 		
 
 		<nav class="header-menu">
@@ -86,15 +86,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://yzy755.github.io/" title="github"><i class="icon-github"></i></a>
+					<a class="weixin" target="_blank" href="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161802/38761/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200507161743.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/u/2750065697/home?wvr=5&lf=reg" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="qq" target="_blank" href="/443444083" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="weixin" target="_blank" href="/yzy755" title="weixin"><i class="icon-weixin"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto:443444083@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:2361925411@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -112,13 +106,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2017/03/08/150908/34060/webwxgeticon.jpg" class="js-avatar">
+				<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161050/18203/P51112-211817-001.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">易泽源</h1>
+			  <h1 class="header-author js-header-author">可可布丁</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一天进步一点 程序员由入门到放弃<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>M2M<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -135,15 +129,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://yzy755.github.io/" title="github"><i class="icon-github"></i></a>
+						<a class="weixin" target="_blank" href="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161802/38761/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200507161743.jpg" title="weixin"><i class="icon-weixin"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/u/2750065697/home?wvr=5&lf=reg" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="qq" target="_blank" href="/443444083" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="weixin" target="_blank" href="/yzy755" title="weixin"><i class="icon-weixin"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto:443444083@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:2361925411@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -313,7 +301,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACr0lEQVR42u3aQY7jMAwEQP//07vAXmdsdJNWNofyKUAShaWDpLR4XfHz599z9zp5fn735/h3Iz9/94UHDw8Pb1R6W1aOzCcuGbn+RTw8PLxjvGQzyBfuvMS2hvzzeHh4eN/Au4M9H46Ts+7zJtEezfHw8PC+hzeLFZIoYXaIx8PDw/u/vCSMaGOCfUT70awFDw8Pb56s1hdgn3/90fs9PDw8vHhLeF5wk3giP0bnoxXV4uHh4R3gJX/789aoWbD77sG97k3Aw8PDW/Dyy6d8id+MNjsh/zICHh4e3gFeHkBsDsHtOO120jYu4OHh4W14+TLdztmMnVOHYQQeHh7eS7z8SPpWOLsPMqKq8PDw8I7xNo0Cm+0hZwzfxcPDwzvAy8FtJJH/ZD4pbSiMh4eH90le24A1TIuD320jZjw8PLxzvBNF7Mdsp3s4KB4eHt6I91bp7Wf2we5wKvHw8PBe5W2uta7yyS/GZmw8PDy807zZtdbzoM8Tkbzbxse3VeHh4eG9ytsfXvPGgjZ0aNPoOsbFw8PDW/OSdoHNT87w7RZS9Bfg4eHhjXh56LDZBlpqXvQLPRF4eHh4JS+/pppdbrXhwuaTv1SIh4eHd4CXt0C9FRDkpWyiDTw8PLxzvH3QsC+6vq/L/yvg4eHhHePlS21+/G0bsDbB7u104+Hh4R3g5QfWzWKdF5dfgA17yvDw8PDWvNlS3l6G5eXWgWySUuPh4eEd420unNrDcd4QMNs8rvwODQ8PD2+7xtaLb07dTNn+SgwPDw/vXd5mM2gxm3aENrDAw8PDO80r/uSXwUR7zVZ0h+Hh4eF9PS9v1dpHurPj+23igoeHh/cFvDy8mEUexdKfhBF4eHh4B3hJcDALHfI4eL/B4OHh4X2G9+6SnWwtJ1oNrs2Dh4eHl9b2F7oHc6iZ6y8wAAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADL0lEQVR42u3aS47bMBAFQN//0g6QVYCB5fea0sSiS6tAE5MsetHuz+MRP8+/z6s3x3/9+f7f5+f7V2/avU54sLGxsW/Cfh4+s0MkT/Kp4y/g+JxvVsPGxsbejp1scBwFjj/VBp7jLyDZ/c1e2NjY2F/JbkNaGw6TYNYmRdjY2NjYeaqQJwZ5eEsuDhsbGxs7Lyrl1zELb7Mi0eW1NGxsbOyPZ7eN3k/+94X9bWxsbOyPZD9HT1JyWm8Gz1KjaGVsbGzsjdh5QX9W1m+bxOu8ogGMjY2NvSk7D04rmHxkJ7nuvOn7MoBhY2Njb8deqca0A5pnlbTyFbCxsbG/gZ3/xG+He2aN5GT3/GzY2NjY38bOt2wLTDNAGzKj9gA2Njb2FuyzNqtTgtFFzxrJj+vuGBsbG/s/sXNScrj2s0mykbcQivITNjY29kbsdkQmbx4kDdrLW7nHF4eNjY29Bbsdu2nD0mxociW8RSEWGxsbezt2e6y2DXzd8M1wSAgbGxt7I3abEuQl+/oQC2FvFmKxsbGx92AnP/Tb9GCGPzcJebMLNjY29kbsWXs1bxLnLeFZYrNyNmxsbOyd2G2akRxxFvaSwDO7XGxsbOxd2bNC//ooT3ut7RTSm/+JjY2NvR17pWC0ErrawlCexhTtAWxsbOybs2fBZha62pQmZ6+kMdjY2Nh7sJNAMhviWQ887YjPcFIJGxsb+7bstgSfPCtJQtvTKBq6bazDxsbGvgn7N69jpdg0azPU6RM2Njb2bdltWedNXWpUHlq/3PobxsbGxt6CfbxE/n5l3CdfP7no6EvCxsbG3oidLLEeQtpBn1kczq8eGxsbeyd2+1N+JTi1zeO8hVBfGTY2NvZG7LbIvlIAWl8zOWfbVMDGxsa+O/uKYJMHwrY50Q76YGNjY38De2UuMdkgbwa3+84CKjY2Nvau7Lb5mpdsknXafWdniKaKsLGxsW/OPjdonVVOGtbGkmQJGxsb++vZeUH/rEbyeo6FjY2Njb1SVFpJbGaB7c0K2NjY2Nux8+JOPoI5Syryi8vxdZcbGxsb+1bspdJMGfBm4a1tElzY38bGxsb+LPYfYhtkFzsxleEAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -358,7 +346,7 @@
  
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-jvm调优总结 -Xms -Xmx -Xmn -Xss" data-title="jvm调优总结 -Xms -Xmx -Xmn -Xss" data-url="http://yzy755.github.io/2017/03/24/jvm调优总结 -Xms -Xmx -Xmn -Xss/"></div>
+    <div class="ds-thread" data-thread-key="post-jvm调优总结 -Xms -Xmx -Xmn -Xss" data-title="jvm调优总结 -Xms -Xmx -Xmn -Xss" data-url="https://yzy755.github.io/keaijia.github.io/2017/03/24/jvm调优总结 -Xms -Xmx -Xmn -Xss/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -382,7 +370,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 易泽源
+    		&copy; 2020 可可布丁
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -501,10 +489,6 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">jar包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jvm</a>
               </li>
              
@@ -513,7 +497,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调优</a>
+                <a href="javascript:void(0)" class="js-tag color5">jar包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -525,15 +513,15 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shiro</a>
+                <a href="javascript:void(0)" class="js-tag color3">调优</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">solr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shiro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,6 +534,10 @@
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">线程安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,15 +557,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">线程安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">第三方快捷登录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">oauth2.0</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">M2M</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">白肌酸</a>
               </li>
             
             <div class="clearfix"></div>

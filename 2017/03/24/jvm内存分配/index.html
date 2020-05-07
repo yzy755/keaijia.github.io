@@ -5,30 +5,30 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yzy755.github.io">
-  <title>jvm内存分配 | 易泽源的博客</title>
+  <link rel="dns-prefetch" href="https://yzy755.github.io/keaijia.github.io">
+  <title>jvm内存分配 | 可可布丁家园</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="java内存组成介绍：堆(Heap)和非堆(Non-heap)内存
 
    按照官方的说法：“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配。堆是在 Java 虚拟机启动时创建的。”“在JVM中堆之外的内存称为非堆内存(Non-heap memory)”。可以看出JVM主要管理两种类型的内存：堆和非堆。简单来说堆就是Java代码可及的内存，是留给开发人员使用的；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jvm内存分配">
-<meta property="og:url" content="http://yzy755.github.io/2017/03/24/jvm内存分配/index.html">
-<meta property="og:site_name" content="易泽源的博客">
+<meta property="og:url" content="https://yzy755.github.io/keaijia.github.io/2017/03/24/jvm内存分配/index.html">
+<meta property="og:site_name" content="可可布丁家园">
 <meta property="og:description" content="java内存组成介绍：堆(Heap)和非堆(Non-heap)内存
 
    按照官方的说法：“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配。堆是在 Java 虚拟机启动时创建的。”“在JVM中堆之外的内存称为非堆内存(Non-heap memory)”。可以看出JVM主要管理两种类型的内存：堆和非堆。简单来说堆就是Java代码可及的内存，是留给开发人员使用的；">
-<meta property="og:image" content="http://yzy755.github.io/2017/03/24/jvm内存分配/combination.PNG">
-<meta property="og:image" content="http://yzy755.github.io/2017/03/24/jvm内存分配/allocation.PNG">
+<meta property="og:image" content="https://yzy755.github.io/keaijia.github.io/keaijia.github.io/2017/03/24/jvm内存分配/combination.PNG">
+<meta property="og:image" content="https://yzy755.github.io/keaijia.github.io/keaijia.github.io/2017/03/24/jvm内存分配/allocation.PNG">
 <meta property="og:updated_time" content="2017-03-24T10:09:41.798Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jvm内存分配">
 <meta name="twitter:description" content="java内存组成介绍：堆(Heap)和非堆(Non-heap)内存
 
    按照官方的说法：“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配。堆是在 Java 虚拟机启动时创建的。”“在JVM中堆之外的内存称为非堆内存(Non-heap memory)”。可以看出JVM主要管理两种类型的内存：堆和非堆。简单来说堆就是Java代码可及的内存，是留给开发人员使用的；">
-<meta name="twitter:image" content="http://yzy755.github.io/2017/03/24/jvm内存分配/combination.PNG">
+<meta name="twitter:image" content="https://yzy755.github.io/keaijia.github.io/keaijia.github.io/2017/03/24/jvm内存分配/combination.PNG">
   
-    <link rel="alternative" href="/atom.xml" title="易泽源的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="可可布丁家园" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -55,13 +55,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2017/03/08/150908/34060/webwxgeticon.jpg" class="js-avatar">
+			<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161050/18203/P51112-211817-001.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">易泽源</a></h1>
+		  <h1 class="header-author"><a href="/">可可布丁</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">一天进步一点 程序员由入门到放弃</p>
+		<p class="header-subtitle">M2M</p>
 		
 
 		<nav class="header-menu">
@@ -95,15 +95,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://yzy755.github.io/" title="github"><i class="icon-github"></i></a>
+					<a class="weixin" target="_blank" href="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161802/38761/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200507161743.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/u/2750065697/home?wvr=5&lf=reg" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="qq" target="_blank" href="/443444083" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="weixin" target="_blank" href="/yzy755" title="weixin"><i class="icon-weixin"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto:443444083@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:2361925411@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -121,13 +115,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2017/03/08/150908/34060/webwxgeticon.jpg" class="js-avatar">
+				<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161050/18203/P51112-211817-001.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">易泽源</h1>
+			  <h1 class="header-author js-header-author">可可布丁</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一天进步一点 程序员由入门到放弃<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>M2M<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -144,15 +138,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://yzy755.github.io/" title="github"><i class="icon-github"></i></a>
+						<a class="weixin" target="_blank" href="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161802/38761/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200507161743.jpg" title="weixin"><i class="icon-weixin"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/u/2750065697/home?wvr=5&lf=reg" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="qq" target="_blank" href="/443444083" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="weixin" target="_blank" href="/yzy755" title="weixin"><i class="icon-weixin"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto:443444083@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:2361925411@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -206,7 +194,7 @@
 
    按照官方的说法：“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配。堆是在 Java 虚拟机启动时创建的。”“在JVM中堆之外的内存称为非堆内存(Non-heap memory)”。可以看出JVM主要管理两种类型的内存：堆和非堆。简单来说堆就是Java代码可及的内存，是留给开发人员使用的；非堆就是JVM留给 自己用的，所以方法区、JVM内部处理或优化所需的内存(如JIT编译后的代码缓存)、每个类结构(如运行时常数池、字段和方法数据)以及方法和构造方法 的代码都在非堆内存中。
 </code></pre><a id="more"></a>
-<p><img src="/2017/03/24/jvm内存分配/combination.PNG" alt="logo"><br>               方法栈&amp;本地方法栈:<br>            线程创建时产生,方法执行时生成栈帧</p>
+<p><img src="/keaijia.github.io/2017/03/24/jvm内存分配/combination.PNG" alt="logo"><br>               方法栈&amp;本地方法栈:<br>            线程创建时产生,方法执行时生成栈帧</p>
 <pre><code>        方法区
         存储类的元数据信息 常量等
 
@@ -219,7 +207,7 @@
 堆内存分配
 
    JVM初始分配的内存由-Xms指定，默认是物理内存的1/64；JVM最大分配的内存由-Xmx指 定，默认是物理内存的1/4。默认空余堆内存小于40%时，JVM就会增大堆直到-Xmx的最大限制；空余堆内存大于70%时，JVM会减少堆直到 -Xms的最小限制。因此服务器一般设置-Xms、-Xmx相等以避免在每次GC 后调整堆的大小。对象的堆内存由称为垃圾回收器的自动内存管理系统回收。
-</code></pre><p><img src="/2017/03/24/jvm内存分配/allocation.PNG" alt="logo"></p>
+</code></pre><p><img src="/keaijia.github.io/2017/03/24/jvm内存分配/allocation.PNG" alt="logo"></p>
 <pre><code>      组成                    详解
       Young Generation        即图中的Eden + From Space + To Space
       Eden                    存放新生的对象
@@ -354,7 +342,7 @@ JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3aQY7jMAwEwPn/p7PXARYrd0vOAqbLp8AxYlUOBNnSz098fX5dv++sv/37/r9+eX3ntgsDA+OxjM/ySp5ZL3oNXrPzt2BgYLyBsS6F+VJOnl+X9Ys1Y2BgYAQl8q4SjIGBgXFvwU1emQy6CQkDAwMjGWLvGjjXMdzXZ3EMDIwHMvLU/f9//sr+BgYGxqMY3xhEk4YvbxmjVWFgYIxm5AUuX1zbXOYt48WTGBgYQxlJvHUS3CfftiFdfWYNAwPj4Yx2cE1Ct3zSzO/nJRsDA2MeI2/vTg5PtPlYu3mAgYExm3Fvr5U3gnlUd9JWYmBgzGC0cf/JEY29w2F1D4uBgTGOkZOSVrIN4FpkskIMDIx3Mtrof6903pYaYmBgjGO0YVY7cLYbk3k5jk6LYGBgjGC0UdperJaU2nYyPUoEMTAwHsVotwyLYTIoo3noVrSGGBgY4xjt0Yq2HWx/LYnk6pdhYGCMYJyHaO1mQFJMj7pdDAyMcYz8OEX+fDsen5RpDAyMdzLypewdm9jLyi7ei4GB8QLGSTOXF+g2zivGZgwMjJcx9spu++I2VrsYnjEwMIYyPuXVDpkJuC2+F70tBgbGOMbenmB7YOKEVxy2wMDAGM3Ii+ze0k/+jqLIYmBgvIBxMqzubRLcddQMAwMDo2W0G5nJ2yMwBgYGRhmWneRge80rBgbGGxh53J+XzvMjGgUbAwNjNCMviHsRW95Qnh/1wMDAGMf4A29fGQagZpL5AAAAAElFTkSuQmCC" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvklEQVR42u3awY7iQAwEUP7/p2elOa20C1TZ6cDh5YQGSPIaKe0p+/GIj5/f49/Xybf+Pl5/ZnaGCw48PDy80a0/O17fRP73ZIFeY57dz5slwMPDwzvGSzaD/AL5NjBbxOSe8fDw8L6Blzyg82XKF6XdWvDw8PC+mZcECkn5flUggoeHh3cnLwkj2rL79YXbDeN41oKHh4c3qVrrh/KnXt/U38PDw8Mru+qbh3LyyG7fre8WDw8P7wDv9WWKf/iDZlU+jtBe8c3Z8PDw8G7hJeDZZpC303Lqmx8GDw8P7wAviVlnG8l+aWZNMjw8PLx7eC2gLcTbEjyPLeoSHA8PD2/Nm61HW1K3RXYOfqx+Sjw8PLwra8s8Vth8ZjZAEJ0HDw8P7wBv09zKy+78ttpQo97q8PDw8Na8tsG/KZqTcnkzrPDI63Q8PDy8BS9vILUDAZvyN2+D5U07PDw8vGt57U0nD+i8mJ4NBxQtNDw8PLzbebOYYLZ5tNRoKfHw8PAu5V3VpG+jinyQK9lU3sS4eHh4eAd4s7hhMwqQZ61tgPufjQEPDw/vUl7eoJpFtCcaYHUYgYeHh3eAt2/ebwKLE4EvHh4e3jlee7HZu1eNarXLh4eHh3eCty98802l3QZm4wgREg8PD2/Nyx/3yQrlcXDSEmubXk8nI/Dw8PAu4s0wbWE9K4s3wwp4eHh49/BmLa5hchy3/5OAYziDgIeHhzfitSlFPn7axrWzJWubc3h4eHh73k95zDaDNnpoBwiKkhoPDw/vQ7VoUohvqLNoox4gwMPDw1vwzm0G7WhCG91G5TUeHh7eMd6s6bWJJDYDCkU8gYeHh/dR3ux22wA3GS/I/4KHh4f3nby8pM6jis3mdPHGgIeHh/eENyuR8zPkQW37raikxsPDw7uUtxlsmrWv2iB4f048PDy8i3h/ACbrfYKLieryAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -399,7 +387,7 @@ JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处
  
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-jvm内存分配" data-title="jvm内存分配" data-url="http://yzy755.github.io/2017/03/24/jvm内存分配/"></div>
+    <div class="ds-thread" data-thread-key="post-jvm内存分配" data-title="jvm内存分配" data-url="https://yzy755.github.io/keaijia.github.io/2017/03/24/jvm内存分配/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -423,7 +411,7 @@ JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 易泽源
+    		&copy; 2020 可可布丁
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -542,10 +530,6 @@ JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">jar包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jvm</a>
               </li>
              
@@ -554,7 +538,11 @@ JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调优</a>
+                <a href="javascript:void(0)" class="js-tag color5">jar包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,15 +554,15 @@ JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shiro</a>
+                <a href="javascript:void(0)" class="js-tag color3">调优</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">solr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shiro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -587,6 +575,10 @@ JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">线程安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,15 +598,19 @@ JVM内存的最大值跟操作系统有很大的关系。简单的说就32位处
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">线程安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">第三方快捷登录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">oauth2.0</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">M2M</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">白肌酸</a>
               </li>
             
             <div class="clearfix"></div>

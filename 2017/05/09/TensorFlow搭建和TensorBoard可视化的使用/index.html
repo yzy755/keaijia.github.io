@@ -5,21 +5,21 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yzy755.github.io">
-  <title>TensorFlow搭建和TensorBoard可视化的使用 | 易泽源的博客</title>
+  <link rel="dns-prefetch" href="https://yzy755.github.io/keaijia.github.io">
+  <title>TensorFlow搭建和TensorBoard可视化的使用 | 可可布丁家园</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值计算的开源软件库。节点（Nodes）在图中表示数学操作，图中的线（edges）则表示在节点间相互联系的多维数据数组，即张量（tensor）。它灵活的架构让你可以在多种平台上展开计算，例如台式计算机中的一个或多个CPU（或GPU），服务器，移动设备等等。TensorFlow 最初由Google大脑小组（隶属于Go">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TensorFlow搭建和TensorBoard可视化的使用">
-<meta property="og:url" content="http://yzy755.github.io/2017/05/09/TensorFlow搭建和TensorBoard可视化的使用/index.html">
-<meta property="og:site_name" content="易泽源的博客">
+<meta property="og:url" content="https://yzy755.github.io/keaijia.github.io/2017/05/09/TensorFlow搭建和TensorBoard可视化的使用/index.html">
+<meta property="og:site_name" content="可可布丁家园">
 <meta property="og:description" content="TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值计算的开源软件库。节点（Nodes）在图中表示数学操作，图中的线（edges）则表示在节点间相互联系的多维数据数组，即张量（tensor）。它灵活的架构让你可以在多种平台上展开计算，例如台式计算机中的一个或多个CPU（或GPU），服务器，移动设备等等。TensorFlow 最初由Google大脑小组（隶属于Go">
-<meta property="og:updated_time" content="2017-05-25T02:04:36.474Z">
+<meta property="og:updated_time" content="2017-05-25T02:04:36.475Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TensorFlow搭建和TensorBoard可视化的使用">
 <meta name="twitter:description" content="TensorFlow™ 是一个采用数据流图（data flow graphs），用于数值计算的开源软件库。节点（Nodes）在图中表示数学操作，图中的线（edges）则表示在节点间相互联系的多维数据数组，即张量（tensor）。它灵活的架构让你可以在多种平台上展开计算，例如台式计算机中的一个或多个CPU（或GPU），服务器，移动设备等等。TensorFlow 最初由Google大脑小组（隶属于Go">
   
-    <link rel="alternative" href="/atom.xml" title="易泽源的博客" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="可可布丁家园" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -46,13 +46,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2017/03/08/150908/34060/webwxgeticon.jpg" class="js-avatar">
+			<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161050/18203/P51112-211817-001.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">易泽源</a></h1>
+		  <h1 class="header-author"><a href="/">可可布丁</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">一天进步一点 程序员由入门到放弃</p>
+		<p class="header-subtitle">M2M</p>
 		
 
 		<nav class="header-menu">
@@ -86,15 +86,9 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://yzy755.github.io/" title="github"><i class="icon-github"></i></a>
+					<a class="weixin" target="_blank" href="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161802/38761/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200507161743.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
-					<a class="weibo" target="_blank" href="http://weibo.com/u/2750065697/home?wvr=5&lf=reg" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="qq" target="_blank" href="/443444083" title="qq"><i class="icon-qq"></i></a>
-		        
-					<a class="weixin" target="_blank" href="/yzy755" title="weixin"><i class="icon-weixin"></i></a>
-		        
-					<a class="mail" target="_blank" href="mailto:443444083@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="mailto:2361925411@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
 		</nav>
@@ -112,13 +106,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2017/03/08/150908/34060/webwxgeticon.jpg" class="js-avatar">
+				<img src="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161050/18203/P51112-211817-001.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">易泽源</h1>
+			  <h1 class="header-author js-header-author">可可布丁</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>一天进步一点 程序员由入门到放弃<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>M2M<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -135,15 +129,9 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://yzy755.github.io/" title="github"><i class="icon-github"></i></a>
+						<a class="weixin" target="_blank" href="http://bwyun.oss-cn-hangzhou.aliyuncs.com/2020/05/07/161802/38761/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200507161743.jpg" title="weixin"><i class="icon-weixin"></i></a>
 			        
-						<a class="weibo" target="_blank" href="http://weibo.com/u/2750065697/home?wvr=5&lf=reg" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="qq" target="_blank" href="/443444083" title="qq"><i class="icon-qq"></i></a>
-			        
-						<a class="weixin" target="_blank" href="/yzy755" title="weixin"><i class="icon-weixin"></i></a>
-			        
-						<a class="mail" target="_blank" href="mailto:443444083@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="mailto:2361925411@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
@@ -560,7 +548,7 @@ if __name__ == &apos;__main__&apos;:
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACqElEQVR42u3aQY7bMBAEQP//0wmQUw6x3c3hrB2gdDK8ksXSAhyqh49HfPz6c+TnPPt8du3fx2PjwMPDwzsa+rPjbIjJ0Cd/TcaMh4eHt807m6zbG7+e4lte9Ijx8PDwPsp7dvu9EoKHh4f3v/PuBgfJYhoPDw/vm3lJGPG6PCSDawedj+dC1oKHh4fX5QCPs0n8U58X+3t4eHh4g6563hK79VzbIvFmnHh4eHgLvNcRbTv35q2sybV1cIyHh4e3wLsbTNyKhtsgI7k7Hh4e3l1eMtx2s2neymqX7/W2Wjw8PLxLvKStlZSHduo/a3e1C3E8PDy8Pd6tTVEtOykkZ8tuPDw8vD1ecvuzAtCGF3eD4zdFAg8PD2/Aa4fSsvMGW/LLddMODw8Pb4H3qSl+Ehbni3I8PDy8PV7b0DorM23o8EORBB4eHl7Ja29cL2eDyb3dXlCUFjw8PLwf55190y6Xz1pxo/4eHh4e3oDXhhFnN5sMrg1z8fDw8D7FO9u6mgDyBXTbyYqqHx4eHt4ar558yzMnDbY21MDDw8O7y5svhdtpvd2wlUfDT/9veHh4eMu8djNBu7xu4+Ck2LzZB4GHh4d3lde+/Oc/3Q5oslXrzUPEw8PDW+a103Qb/s7Di5yKh4eHt8fLI9S7C+v8jmcvA3h4eHh7vLyhdWvKzgtGHka8KQl4eHh4y7w2nsiDg8kWgbYlhoeHh7fBm0/fk/D39Zl5AXh6LR4eHt4Cb1JPkiXv3fC33cSAh4eHt8dLikG+FSC/Kjk/eVhRfw8PDw9vgddunMqn/rxgTGrX06vw8PDwvoA3iQOSTQlnMQceHh7ed/Lm7a4khjhLEg53RuDh4eENePlPTAKIs/ZYWzbw8PDwtnmjV/2F0KENQVb6e3h4eHj//uY3yEdek1iowUYAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADJklEQVR42u3aUY4iMQwFwLn/pZkDzADv2SDRofprxUadlFtar+38/MTP7c6TrMzfmfx+7z0/73iwsbGxL8K+PXz+rvm7WX7ohPGYlJ/zyQfAxsbGPo79eMs2keRJbpN3ZmfDxsbGxm43aBNkkYSwsbGxsd/MnjWeNuUKNjY29jezkwSTlxyP01heWuxbWi/opWFjY2N/PDtv5Xz+n98y38bGxsb+YPatfPJRbvL7a5NTocDGxsY+iN02bvYpJCl1ZkVOe35sbGzsM9htatk08WcFz6Y9dHclNjY29kHshJenk1kQH5cuefKrQ4aNjY19BDvfIA/N7D3JLpsLQNF3xsbGxr4g+/HhNnPS9qCzsmfTisLGxsY+g90WGG1PZhbcWcrM0yc2Njb2Sew2DcxS2qZ11V7oKYKIjY2NfQR7lqjaEe8mXbWzjijc2NjY2Aexk3/68wDtr/W0iSo/ITY2NvbZ7E0zKNl4NiTO3zN7MzY2Nvb3sBPSrFRoC4/891nosbGxsa/Lng168/WzcXJeSCShxMbGxv4edtswetW1m7bgadMVNjY29tnszVWYzci2bWZtGmGriQQ2Njb2B7OThJFc38lHxa9q8ecf6Z99sbGxsQ9ityXBq8a0++KkDdndNdjY2NgHsZOlmxbSsOmzbkIV78fGxsa+IHtzxHaIO2tmzXZ/8qmwsbGxD2InLZu8SdRezdlfDGpPVdxUwsbGxr4IOz/iLATtWPe1I+cib2NjY2Nflj1rpu/X5GVGHqD2U2FjY2Ofx24LhtnwYMNrL2IWqQsbGxv74uzZf/Efk/IQ5APdfNgQhRgbGxv7UPYGkF+m2SSnGfvJVAQbGxv7CHbSrMkHCTm1bQ+9uBTBxsbGvjj7Vj7JgfJj5SkzD2sUJmxsbOyD2O3hZqlo1k5qy5skEdYhwMbGxr4Ie/bqWQLbDxLa73l3F2xsbOzj2MkR8yT37uS3HyRgY2NjY28a9PuaKR9XPBkSYGNjY38lu71w2TaM9mVMtB4bGxv7OHY+3G3bN3kqyttM7Xjgn7/FxsbGPoi9KSo2qWU4c37bqbCxsbEvyP4FahvYJHXnNOYAAAAASUVORK5CYII=" alt="微信分享二维码">
     </div>
 </div>
 
@@ -605,7 +593,7 @@ if __name__ == &apos;__main__&apos;:
  
   <section id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="post-TensorFlow搭建和TensorBoard可视化的使用" data-title="TensorFlow搭建和TensorBoard可视化的使用" data-url="http://yzy755.github.io/2017/05/09/TensorFlow搭建和TensorBoard可视化的使用/"></div>
+    <div class="ds-thread" data-thread-key="post-TensorFlow搭建和TensorBoard可视化的使用" data-title="TensorFlow搭建和TensorBoard可视化的使用" data-url="https://yzy755.github.io/keaijia.github.io/2017/05/09/TensorFlow搭建和TensorBoard可视化的使用/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -629,7 +617,7 @@ if __name__ == &apos;__main__&apos;:
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 易泽源
+    		&copy; 2020 可可布丁
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -748,10 +736,6 @@ if __name__ == &apos;__main__&apos;:
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">jar包</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jvm</a>
               </li>
              
@@ -760,7 +744,11 @@ if __name__ == &apos;__main__&apos;:
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">调优</a>
+                <a href="javascript:void(0)" class="js-tag color5">jar包</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -772,15 +760,15 @@ if __name__ == &apos;__main__&apos;:
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">shiro</a>
+                <a href="javascript:void(0)" class="js-tag color3">调优</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">solr</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">shiro</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -793,6 +781,10 @@ if __name__ == &apos;__main__&apos;:
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">线程安全</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -812,15 +804,19 @@ if __name__ == &apos;__main__&apos;:
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">线程安全</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">第三方快捷登录</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">oauth2.0</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">M2M</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">白肌酸</a>
               </li>
             
             <div class="clearfix"></div>
